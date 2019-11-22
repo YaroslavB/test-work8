@@ -11,6 +11,8 @@
 |
 */
 
+use App\Item;
+
 Route::get('/', function () {
-    return view('welcome');
+    return ['welcom to test-work8'];
 });
