@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CategoryController;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Router;
 
 /*
 |--------------------------------------------------------------------------
