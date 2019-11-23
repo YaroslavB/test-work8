@@ -1,5 +1,6 @@
 <?php
 
+use App\Item;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -11,6 +12,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        Item::get()->each(function (Item $item) {
+            $item->delete();
+        });
         factory(\App\Category::class, 10)->create();
     }
 }
