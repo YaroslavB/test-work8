@@ -9,13 +9,24 @@ services:
       MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
       MYSQL_DATABASE: ${DB_DATABASE}
 
-  app:
+  backend:
     build:
-      context: ./
+      context: ./backend
       target: developer
     depends_on:
       - db
+    env_file:
+      - .env
     volumes:
-      - ./:/app
+      - ./backend:/app
     ports:
       - 8080:8080
+
+  front:
+    build:
+      context: front
+      target: developer
+    volumes:
+      - ./front:/app
+    ports:
+    - 8070:8080
