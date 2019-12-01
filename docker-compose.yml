@@ -23,9 +23,11 @@ services:
       - 8080:8080
 
   front:
-    build:
-      context: front
-      target: developer
+    image: node:12
+    working_dir: /app
+    command: make dev
+    depends_on:
+      - backend
     volumes:
       - ./front:/app
     ports:

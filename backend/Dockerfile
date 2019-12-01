@@ -15,5 +15,5 @@ RUN apt-get update \
     && curl -s https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer --quiet \
     && ln -s /app/artisan /usr/local/bin/artisan
 WORKDIR /app
-CMD ["./cmd.sh"]
+CMD make dev
 EXPOSE 8080
